@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>arithmetic calculator</title>
+<script>
+function calc(oper)
+{
+var n1=parseFloat(document.getElementById("n1").value);
+var n2=parseFloat(document.getElementById("n2").value);
+if(oper == "+")
+{
+document.getElementById("Result").value=n1+n2;
+}
+if(oper == "-")
+{
+document.getElementById("Result").value=n1-n2;
+}
+if(oper == "*")
+{
+document.getElementById("Result").value=n1*n2;
+}
+if(oper == "/")
+{
+if(n2==0)
+{
+var e="error";
+document.getElementById("Result").value=e;
+return;
+}
+document.getElementById("Result").value=n1/n2;
+}
+}
+</script>
+</head>
+<body>
+<form>
+<input type="text" id="n1" style="width=200px;height:20px"></br>
+<input type="text" id="n2" style="width=200px;height:20px"></br>
+<input type="button" onclick="calc('+')" value="+" style="width=200px;height:30px">
+<input type="button" onclick="calc('-')" value="-" style="width=200px;height:30px">
+<input type="button" onclick="calc('*')" value="*" style="width=200px;height:30px">
+<input type="button" onclick="calc('/')" value="/" style="width=200px;height:30px"><br/>
+<input type="text" id="Result">
+</form>
+</body>
+</html>
